@@ -83,7 +83,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		 <finalName>oubaid-app</finalName>
+		 <finalName>ibrahim-app</finalName>
 	</build>
 
 	<!-- Deploy to Nexus -->
