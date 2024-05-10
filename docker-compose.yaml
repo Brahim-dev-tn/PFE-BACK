@@ -9,10 +9,11 @@ services:
       - SPRING_DATASOURCE_URL=jdbc:mysql://app-db:3306/achatdb?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=vagrant
+    ports:
+      - "8089:8089"
     depends_on:
       - app-db
     restart: always
-    network_mode: "host"
 
   app-db:
     image: mysql:latest
@@ -20,8 +21,12 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: vagrant
       MYSQL_DATABASE: achatdb
+    ports:
+      - "3306:3306"
     restart: always
-    network_mode: "host"
+
+networks:
+  app-network:
 
 volumes:
   mysql_data:
