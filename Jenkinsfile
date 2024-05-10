@@ -33,7 +33,7 @@ pipeline {
                 script {
                     // Managing Docker Compose services
                     sh 'docker-compose down'
-                    sh 'docker-compose up -d'
+                    sh 'docker-compose up -d --build'
                 }
             }
         }
